@@ -1,4 +1,4 @@
-[@aureooms/js-knapsack](https://aureooms.github.io/js-knapsack)
+:school_satchel: [@aureooms/js-knapsack](https://aureooms.github.io/js-knapsack)
 ==
 
 Knapsack problem algorithms for JavaScript.

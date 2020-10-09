@@ -7,7 +7,7 @@ const integerValuesKnapsack = (
 	n,
 	W,
 	V = sum(v),
-	m = new w.constructor(V + 1).fill(Number(Infinity)),
+	m = new w.constructor(V + 1).fill(W + 1),
 ) => {
 	assert(v.length === n);
 	assert(w.length === n);

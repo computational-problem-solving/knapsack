@@ -1,6 +1,6 @@
 import assert from 'assert';
 
-const integerKnapsack = (v, w, n, W, m = new w.constructor(W + 1).fill(0)) => {
+const integerKnapsack = (v, w, n, W, m = new v.constructor(W + 1).fill(0)) => {
 	assert(v.length === n);
 	assert(w.length === n);
 	assert(Number.isInteger(W) && W >= 0);

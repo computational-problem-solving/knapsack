@@ -1,17 +1,17 @@
 import test from 'ava';
 
-import {integerKnapsack} from '../../src';
+import {integerValuesKnapsack} from '../../src';
 
 const macro = (t, v, w, n, W, expected) => {
 	t.is(n, v.length);
 	t.is(n, w.length);
-	const result = integerKnapsack(v, w, n, W);
+	const result = integerValuesKnapsack(v, w, n, W);
 	t.is(expected, result);
 };
 
 macro.title = (title, v, w, n, W, expected) =>
 	title ||
-	`integerKnapsack(${JSON.stringify(v)}, ${JSON.stringify(
+	`integerValuesKnapsack(${JSON.stringify(v)}, ${JSON.stringify(
 		w,
 	)}, ${n}, ${W}) = ${expected}`;
 

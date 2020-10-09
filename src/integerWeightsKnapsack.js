@@ -1,6 +1,12 @@
 import assert from 'assert';
 
-const integerKnapsack = (v, w, n, W, m = new v.constructor(W + 1).fill(0)) => {
+const integerWeightsKnapsack = (
+	v,
+	w,
+	n,
+	W,
+	m = new v.constructor(W + 1).fill(0),
+) => {
 	assert(v.length === n);
 	assert(w.length === n);
 	assert(Number.isInteger(W) && W >= 0);
@@ -18,4 +24,4 @@ const integerKnapsack = (v, w, n, W, m = new v.constructor(W + 1).fill(0)) => {
 	return m[0];
 };
 
-export default integerKnapsack;
+export default integerWeightsKnapsack;

@@ -27,6 +27,7 @@
             "transform-remove-console",
             {
               "exclude": [
+                "debug",
                 "log",
                 "error",
                 "warn"
@@ -75,7 +76,9 @@
   "bugs": {
     "url": "https://github.com/aureooms/js-knapsack/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@aureooms/js-itertools": "^4.1.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.11.6",
     "@babel/core": "7.11.6",
@@ -101,7 +104,25 @@
     "lib"
   ],
   "homepage": "https://aureooms.github.io/js-knapsack",
-  "keywords": ["agpl", "algorithms", "complete", "computer", "dynamic", "in", "javascript", "knapsack", "meet", "middle", "np", "polynomial", "programming", "pseudo", "reductions", "science", "the"],
+  "keywords": [
+    "agpl",
+    "algorithms",
+    "complete",
+    "computer",
+    "dynamic",
+    "in",
+    "javascript",
+    "knapsack",
+    "meet",
+    "middle",
+    "np",
+    "polynomial",
+    "programming",
+    "pseudo",
+    "reductions",
+    "science",
+    "the"
+  ],
   "license": "AGPL-3.0",
   "main": "lib/index.js",
   "prettier": {

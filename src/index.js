@@ -1,8 +1,10 @@
-import integerKnapsack from './integerKnapsack';
+import integerValuesKnapsack from './integerValuesKnapsack';
+import integerWeightsKnapsack from './integerWeightsKnapsack';
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
-	integerKnapsack,
+	integerValuesKnapsack,
+	integerWeightsKnapsack,
 };
 
-export {integerKnapsack};
+export {integerValuesKnapsack, integerWeightsKnapsack};

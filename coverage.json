@@ -1,0 +1,14 @@
+{
+  "coverage": "0%",
+  "expectCount": 1,
+  "actualCount": 0,
+  "files": {
+    "src/integerKnapsack.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    }
+  }
+}

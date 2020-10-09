@@ -9,8 +9,8 @@ const integerKnapsack = (v, w, n, W, m = new v.constructor(W + 1).fill(0)) => {
 		const wi = w[i];
 		const vi = v[i];
 		assert(Number.isInteger(wi) && wi >= 0 && wi <= W);
-		const s = W - wi;
-		for (let j = 0; j <= s; ++j) {
+		const k = W - wi + 1;
+		for (let j = 0; j < k; ++j) {
 			m[j] = Math.max(m[j], m[j + wi] + vi);
 		}
 	}

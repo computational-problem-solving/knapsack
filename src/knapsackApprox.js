@@ -7,11 +7,11 @@ import integerValuesKnapsack from './integerValuesKnapsack';
 /**
  * (1-eps)-approx for the knapsack problem. Runs in O(N^3/eps) time.
  *
+ * @param {Number} eps Approximation constant.
  * @param {Array} v Values.
  * @param {Array} w Weights.
- * @param {Array} n Size of the problem.
- * @param {Array} W Size of the knapsack.
- * @param {Array} eps Approximation constant.
+ * @param {Number} n Size of the problem.
+ * @param {Number} W Size of the knapsack.
  * @param {Number} P Any lower bound on OPT > 0.
  */
 const knapsackApprox = (

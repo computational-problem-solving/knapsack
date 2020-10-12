@@ -5,6 +5,7 @@ import {all, map} from '@aureooms/js-itertools';
 import {
 	integerValuesKnapsack,
 	integerWeightsKnapsack,
+	knapsackApprox,
 } from '../../src';
 
 const macro = (t, solve, _name, v, w, n, W, opt, approx) => {
@@ -29,6 +30,18 @@ macro.title = (title, solve, name, v, w, n, W, opt, approx) =>
 				w,
 		  )}, ${n}, ${W}) >= ${approx} * ${opt}`;
 
+const approx = (ratio) => {
+	const eps = 1 - ratio;
+	const name = `${knapsackApprox.name}(eps=${eps})`;
+	const solve = (v, w, n, W) => knapsackApprox(eps, v, w, n, W);
+
+	return {
+		solve,
+		name,
+		approx: ratio,
+	};
+};
+
 const solvers = [
 	{
 		solve: integerValuesKnapsack,
@@ -38,6 +51,9 @@ const solvers = [
 		solve: integerWeightsKnapsack,
 		hypothesis: (_, w) => all(map((x) => Number.isInteger(x), w)),
 	},
+	approx(1 / 2),
+	approx(2 / 3),
+	approx(3 / 4),
 ];
 
 const instances = [

@@ -15,11 +15,11 @@ import integerValuesKnapsack from './integerValuesKnapsack';
  * @param {Number} P Any lower bound on OPT > 0.
  */
 const knapsackApprox = (
+	eps,
 	v,
 	w,
 	n,
 	W,
-	eps,
 	P = max(
 		increasing,
 		map(

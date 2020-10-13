@@ -1,5 +1,15 @@
 import assert from 'assert';
 
+/**
+ * Exact DP solution to the 0-1 knapsack problem with integer weights.
+ * Runs in O(nW) time.
+ *
+ * @param {Array} v Values.
+ * @param {Array} w Weights.
+ * @param {Number} n Size of the problem.
+ * @param {Number} W Size of the knapsack.
+ * @param {Array} m Memory buffer.
+ */
 const integerWeightsKnapsack = (
 	v,
 	w,

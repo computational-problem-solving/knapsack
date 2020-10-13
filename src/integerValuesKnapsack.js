@@ -1,6 +1,17 @@
 import assert from 'assert';
 import {sum} from '@aureooms/js-itertools';
 
+/**
+ * Exact DP solution to the 0-1 knapsack problem with integer values given a known
+ * upper bound V on OPT. Runs in O(nV) time.
+ *
+ * @param {Array} v Values.
+ * @param {Array} w Weights.
+ * @param {Number} n Size of the problem.
+ * @param {Number} W Size of the knapsack.
+ * @param {Number} V Any upper bound on OPT >= 0.
+ * @param {Array} m Memory buffer.
+ */
 const integerValuesKnapsack = (
 	v,
 	w,

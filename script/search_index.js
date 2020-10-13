@@ -1,8 +1,32 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-knapsack/src/integerknapsack.js~integerknapsack",
-    "function/index.html#static-function-integerKnapsack",
-    "<span>integerKnapsack</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerKnapsack.js</span>",
+    "@aureooms/js-knapsack/src/integervaluesknapsack.js~integervaluesknapsack",
+    "function/index.html#static-function-integerValuesKnapsack",
+    "<span>integerValuesKnapsack</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerValuesKnapsack.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-knapsack/src/integervaluesknapsackunbounded.js~integervaluesknapsackunbounded",
+    "function/index.html#static-function-integerValuesKnapsackUnbounded",
+    "<span>integerValuesKnapsackUnbounded</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerValuesKnapsackUnbounded.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-knapsack/src/integerweightsknapsack.js~integerweightsknapsack",
+    "function/index.html#static-function-integerWeightsKnapsack",
+    "<span>integerWeightsKnapsack</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerWeightsKnapsack.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-knapsack/src/integerweightsknapsackunbounded.js~integerweightsknapsackunbounded",
+    "function/index.html#static-function-integerWeightsKnapsackUnbounded",
+    "<span>integerWeightsKnapsackUnbounded</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerWeightsKnapsackUnbounded.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-knapsack/src/knapsackapprox.js~knapsackapprox",
+    "function/index.html#static-function-knapsackApprox",
+    "<span>knapsackApprox</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/knapsackApprox.js</span>",
     "function"
   ],
   [
@@ -294,9 +318,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/integerknapsack.js",
-    "file/src/integerKnapsack.js.html",
-    "src/integerKnapsack.js",
+    "src/integervaluesknapsack.js",
+    "file/src/integerValuesKnapsack.js.html",
+    "src/integerValuesKnapsack.js",
+    "file"
+  ],
+  [
+    "src/integervaluesknapsackunbounded.js",
+    "file/src/integerValuesKnapsackUnbounded.js.html",
+    "src/integerValuesKnapsackUnbounded.js",
+    "file"
+  ],
+  [
+    "src/integerweightsknapsack.js",
+    "file/src/integerWeightsKnapsack.js.html",
+    "src/integerWeightsKnapsack.js",
+    "file"
+  ],
+  [
+    "src/integerweightsknapsackunbounded.js",
+    "file/src/integerWeightsKnapsackUnbounded.js.html",
+    "src/integerWeightsKnapsackUnbounded.js",
+    "file"
+  ],
+  [
+    "src/knapsackapprox.js",
+    "file/src/knapsackApprox.js.html",
+    "src/knapsackApprox.js",
     "file"
   ]
 ]

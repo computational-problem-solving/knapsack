@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | @aureooms/js-knapsack</title>
+  <title data-ice="title">src/integerValuesKnapsackUnbounded.js | @aureooms/js-knapsack</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -38,29 +38,65 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import integerValuesKnapsack from &apos;./integerValuesKnapsack&apos;;
-import integerValuesKnapsackUnbounded from &apos;./integerValuesKnapsackUnbounded&apos;;
-import integerWeightsKnapsack from &apos;./integerWeightsKnapsack&apos;;
-import integerWeightsKnapsackUnbounded from &apos;./integerWeightsKnapsackUnbounded&apos;;
-import knapsackApprox from &apos;./knapsackApprox&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/integerValuesKnapsackUnbounded.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import {increasing} from &apos;@aureooms/js-compare&apos;;
+import {max, map, range} from &apos;@aureooms/js-itertools&apos;;
 
-/* eslint import/no-anonymous-default-export: [2, {&quot;allowObject&quot;: true}] */
-export default {
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
+/**
+ * Exact DP solution to the unbounded knapsack problem with integer values
+ * given a known upper bound V on OPT. Runs in O(nV) time.
+ *
+ * @param {Array} v Values.
+ * @param {Array} w Weights.
+ * @param {Number} n Size of the problem.
+ * @param {Number} W Size of the knapsack.
+ * @param {Number} V Any upper bound on OPT &gt;= 0.
+ * @param {Array} m Memory buffer.
+ */
+const integerValuesKnapsackUnbounded = (
+	v,
+	w,
+	n,
+	W,
+	V = Math.floor(
+		W *
+			max(
+				increasing,
+				map((i) =&gt; v[i] / w[i], range(n)),
+			),
+	),
+	m = new w.constructor(V + 1).fill(W + 1),
+) =&gt; {
+	assert(v.length === n);
+	assert(w.length === n);
+	assert(Number.isInteger(V) &amp;&amp; V &gt;= 0);
+	assert(m.length &gt;= V + 1);
+	m[0] = 0;
+	for (let j = 1; j &lt;= V; ++j) {
+		let temporary = m[j];
+		for (let i = 0; i &lt; n; ++i) {
+			const wi = w[i];
+			const vi = v[i];
+			assert(Number.isInteger(vi) &amp;&amp; vi &gt;= 0);
+			const k = j - vi;
+			// TODO sort by value to avoid branching
+			// from larger to smaller so that m is scanned
+			// from left to right
+			if (k &gt;= 0) temporary = Math.min(temporary, m[k] + wi);
+		}
+
+		m[j] = temporary;
+	}
+
+	for (let j = V; j &gt; 0; --j) {
+		if (m[j] &lt;= W) return j;
+	}
+
+	return 0;
 };
 
-export {
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
-};
+export default integerValuesKnapsackUnbounded;
 </code></pre>
 
 </div>

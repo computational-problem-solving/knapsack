@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | @aureooms/js-knapsack</title>
+  <title data-ice="title">src/integerWeightsKnapsackUnbounded.js | @aureooms/js-knapsack</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -38,29 +38,50 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import integerValuesKnapsack from &apos;./integerValuesKnapsack&apos;;
-import integerValuesKnapsackUnbounded from &apos;./integerValuesKnapsackUnbounded&apos;;
-import integerWeightsKnapsack from &apos;./integerWeightsKnapsack&apos;;
-import integerWeightsKnapsackUnbounded from &apos;./integerWeightsKnapsackUnbounded&apos;;
-import knapsackApprox from &apos;./knapsackApprox&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/integerWeightsKnapsackUnbounded.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
 
-/* eslint import/no-anonymous-default-export: [2, {&quot;allowObject&quot;: true}] */
-export default {
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
+/**
+ * Exact DP solution to the unbounded knapsack problem with integer weights.
+ * Runs in O(nW) time.
+ *
+ * @param {Array} v Values.
+ * @param {Array} w Weights.
+ * @param {Number} n Size of the problem.
+ * @param {Number} W Size of the knapsack.
+ * @param {Array} m Memory buffer.
+ */
+const integerWeightsKnapsackUnbounded = (
+	v,
+	w,
+	n,
+	W,
+	m = new v.constructor(W + 1).fill(0),
+) =&gt; {
+	assert(v.length === n);
+	assert(w.length === n);
+	assert(Number.isInteger(W) &amp;&amp; W &gt;= 0);
+	assert(m.length &gt;= W + 1);
+	for (let j = 1; j &lt;= W; ++j) {
+		let temporary = m[j];
+		for (let i = 0; i &lt; n; ++i) {
+			const wi = w[i];
+			const vi = v[i];
+			assert(Number.isInteger(wi) &amp;&amp; wi &gt;= 0 &amp;&amp; wi &lt;= W);
+			const k = j - wi;
+			// TODO sort by weight to avoid branching
+			// from larger to smaller so that m is scanned
+			// from left to right
+			if (k &gt;= 0) temporary = Math.max(temporary, m[k] + vi);
+		}
+
+		m[j] = temporary;
+	}
+
+	return m[W];
 };
 
-export {
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
-};
+export default integerWeightsKnapsackUnbounded;
 </code></pre>
 
 </div>

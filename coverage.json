@@ -1,14 +1,32 @@
 {
-  "coverage": "0%",
-  "expectCount": 1,
-  "actualCount": 0,
+  "coverage": "100%",
+  "expectCount": 5,
+  "actualCount": 5,
   "files": {
-    "src/integerKnapsack.js": {
+    "src/integerValuesKnapsack.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/integerValuesKnapsackUnbounded.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/integerWeightsKnapsack.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/integerWeightsKnapsackUnbounded.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/knapsackApprox.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     }
   }
 }

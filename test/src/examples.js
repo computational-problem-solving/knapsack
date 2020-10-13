@@ -58,6 +58,14 @@ const solvers = [
 
 const instances = [
 	{
+		title: 'wikipedia illustration',
+		v: [4, 2, 2, 1, 10],
+		w: [12, 2, 1, 1, 4],
+		n: 5,
+		W: 15,
+		opt: 15,
+	},
+	{
 		title: 'wikipedia 0-1 knapsack example',
 		v: [505, 352, 458, 220, 354, 414, 498, 545, 473, 543],
 		w: [23, 26, 20, 18, 32, 27, 29, 26, 30, 27],

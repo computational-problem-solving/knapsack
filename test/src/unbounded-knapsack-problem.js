@@ -2,7 +2,10 @@ import test from 'ava';
 
 import {all, map} from '@aureooms/js-itertools';
 
-import {integerWeightsKnapsackUnbounded} from '../../src';
+import {
+	integerValuesKnapsackUnbounded,
+	integerWeightsKnapsackUnbounded,
+} from '../../src';
 
 const macro = (t, solve, _name, v, w, n, W, opt, approx) => {
 	t.is(n, v.length);
@@ -27,6 +30,10 @@ macro.title = (title, solve, name, v, w, n, W, opt, approx) =>
 		  )}, ${n}, ${W}) >= ${approx} * ${opt}`;
 
 const solvers = [
+	{
+		solve: integerValuesKnapsackUnbounded,
+		hypothesis: (v) => all(map((x) => Number.isInteger(x), v)),
+	},
 	{
 		solve: integerWeightsKnapsackUnbounded,
 		hypothesis: (_, w) => all(map((x) => Number.isInteger(x), w)),

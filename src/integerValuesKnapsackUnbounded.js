@@ -10,6 +10,7 @@ import {max, map, range} from '@aureooms/js-itertools';
  * @param {Array} w Weights.
  * @param {Number} n Size of the problem.
  * @param {Number} W Size of the knapsack.
+ * @param {Number|BigInt} zero The number 0.
  * @param {Number} V Any upper bound on OPT >= 0.
  * @param {Array} m Memory buffer.
  */
@@ -18,11 +19,13 @@ const integerValuesKnapsackUnbounded = (
 	w,
 	n,
 	W,
+	zero = 0,
 	V = Math.floor(
 		W *
 			max(
 				increasing,
 				map((i) => v[i] / w[i], range(n)),
+				zero,
 			),
 	),
 	m = new w.constructor(V + 1).fill(W + 1),

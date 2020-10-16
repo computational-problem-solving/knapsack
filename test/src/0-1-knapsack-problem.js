@@ -39,6 +39,7 @@ const approx = (ratio) => {
 		solve,
 		name,
 		approx: ratio,
+		hypothesis: (_v, _w, n) => n > 0,
 	};
 };
 
@@ -57,6 +58,14 @@ const solvers = [
 ];
 
 const instances = [
+	{
+		title: 'empty instance',
+		v: [],
+		w: [],
+		n: 0,
+		W: 15,
+		opt: 0,
+	},
 	{
 		title: 'wikipedia illustration',
 		v: [4, 2, 2, 1, 10],

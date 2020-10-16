@@ -47,6 +47,14 @@ const solvers = [
 
 const instances = [
 	{
+		title: 'empty instance',
+		v: [],
+		w: [],
+		n: 0,
+		W: 15,
+		opt: 0,
+	},
+	{
 		title: 'wikipedia illustration',
 		v: [4, 2, 2, 1, 10],
 		w: [12, 2, 1, 1, 4],

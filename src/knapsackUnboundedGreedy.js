@@ -1,6 +1,8 @@
 import assert from 'assert';
-import {fn, decreasing} from '@aureooms/js-compare';
 import {map, range, sorted} from '@aureooms/js-itertools';
+
+import Item from './Item';
+import orderedByDecreasingUtility from './orderedByDecreasingUtility';
 
 /**
  * 1/2-approximation to the unbounded knapsack problem.
@@ -34,14 +36,5 @@ const subroutine = (W, items) => {
 
 	return value;
 };
-
-function Item(weight, value) {
-	assert(weight > 0);
-	this.w = weight;
-	this.v = value;
-}
-
-const utility = (x) => x.v / x.w;
-const orderedByDecreasingUtility = fn(decreasing, utility);
 
 export default knapsackUnboundedGreedy;

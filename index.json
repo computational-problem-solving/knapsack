@@ -566,8 +566,51 @@
   {
     "__docId__": 48,
     "kind": "file",
+    "name": "src/Item.js",
+    "content": "import assert from 'assert';\n\nexport default function Item(weight, value) {\n\tassert(weight > 0);\n\tthis.w = weight;\n\tthis.v = value;\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-knapsack/src/Item.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "Item",
+    "memberof": "src/Item.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Item.js~Item",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-knapsack/src/Item.js",
+    "importStyle": "Item",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "weight",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
     "name": "src/index.js",
-    "content": "import integerValuesKnapsack from './integerValuesKnapsack';\nimport integerValuesKnapsackUnbounded from './integerValuesKnapsackUnbounded';\nimport integerWeightsKnapsack from './integerWeightsKnapsack';\nimport integerWeightsKnapsackUnbounded from './integerWeightsKnapsackUnbounded';\nimport knapsackApprox from './knapsackApprox';\n\n/* eslint import/no-anonymous-default-export: [2, {\"allowObject\": true}] */\nexport default {\n\tintegerValuesKnapsack,\n\tintegerValuesKnapsackUnbounded,\n\tintegerWeightsKnapsack,\n\tintegerWeightsKnapsackUnbounded,\n\tknapsackApprox,\n};\n\nexport {\n\tintegerValuesKnapsack,\n\tintegerValuesKnapsackUnbounded,\n\tintegerWeightsKnapsack,\n\tintegerWeightsKnapsackUnbounded,\n\tknapsackApprox,\n};\n",
+    "content": "import Item from './Item';\nimport integerValuesKnapsack from './integerValuesKnapsack';\nimport integerValuesKnapsackUnbounded from './integerValuesKnapsackUnbounded';\nimport integerWeightsKnapsack from './integerWeightsKnapsack';\nimport integerWeightsKnapsackUnbounded from './integerWeightsKnapsackUnbounded';\nimport knapsackApprox from './knapsackApprox';\nimport knapsackGreedy from './knapsackGreedy';\nimport knapsackUnboundedGreedy from './knapsackUnboundedGreedy';\nimport orderedByDecreasingUtility from './orderedByDecreasingUtility';\n\n/* eslint import/no-anonymous-default-export: [2, {\"allowObject\": true}] */\nexport default {\n\tItem,\n\tintegerValuesKnapsack,\n\tintegerValuesKnapsackUnbounded,\n\tintegerWeightsKnapsack,\n\tintegerWeightsKnapsackUnbounded,\n\tknapsackApprox,\n\tknapsackGreedy,\n\tknapsackUnboundedGreedy,\n\torderedByDecreasingUtility,\n};\n\nexport {\n\tItem,\n\tintegerValuesKnapsack,\n\tintegerValuesKnapsackUnbounded,\n\tintegerWeightsKnapsack,\n\tintegerWeightsKnapsackUnbounded,\n\tknapsackApprox,\n\tknapsackGreedy,\n\tknapsackUnboundedGreedy,\n\torderedByDecreasingUtility,\n};\n",
     "static": true,
     "longname": "/home/aureooms/dev/js/js-knapsack/src/index.js",
     "access": "public",
@@ -575,7 +618,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 49,
+    "__docId__": 51,
     "kind": "file",
     "name": "src/integerValuesKnapsack.js",
     "content": "import assert from 'assert';\nimport {sum} from '@aureooms/js-itertools';\n\n/**\n * Exact DP solution to the 0-1 knapsack problem with integer values given a known\n * upper bound V on OPT. Runs in O(nV) time.\n *\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n * @param {Number} V Any upper bound on OPT >= 0.\n * @param {Array} m Memory buffer.\n */\nconst integerValuesKnapsack = (\n\tv,\n\tw,\n\tn,\n\tW,\n\tV = sum(v),\n\tm = new w.constructor(V + 1).fill(W + 1),\n) => {\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tassert(Number.isInteger(V) && V >= 0);\n\tassert(m.length >= V + 1);\n\tm[V] = 0;\n\tfor (let i = 0; i < n; ++i) {\n\t\tconst wi = w[i];\n\t\tconst vi = v[i];\n\t\tassert(Number.isInteger(vi) && vi >= 0);\n\t\tconst k = V - vi + 1;\n\t\tfor (let j = 0; j < k; ++j) {\n\t\t\tm[j] = Math.min(m[j], m[j + vi] + wi);\n\t\t}\n\t}\n\n\tfor (let j = 0; j < V; ++j) {\n\t\tif (m[j] <= W) return V - j;\n\t}\n\n\treturn 0;\n};\n\nexport default integerValuesKnapsack;\n",
@@ -586,7 +629,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 50,
+    "__docId__": 52,
     "kind": "function",
     "name": "integerValuesKnapsack",
     "memberof": "src/integerValuesKnapsack.js",
@@ -669,10 +712,10 @@
     }
   },
   {
-    "__docId__": 51,
+    "__docId__": 53,
     "kind": "file",
     "name": "src/integerValuesKnapsackUnbounded.js",
-    "content": "import assert from 'assert';\nimport {increasing} from '@aureooms/js-compare';\nimport {max, map, range} from '@aureooms/js-itertools';\n\n/**\n * Exact DP solution to the unbounded knapsack problem with integer values\n * given a known upper bound V on OPT. Runs in O(nV) time.\n *\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n * @param {Number} V Any upper bound on OPT >= 0.\n * @param {Array} m Memory buffer.\n */\nconst integerValuesKnapsackUnbounded = (\n\tv,\n\tw,\n\tn,\n\tW,\n\tV = Math.floor(\n\t\tW *\n\t\t\tmax(\n\t\t\t\tincreasing,\n\t\t\t\tmap((i) => v[i] / w[i], range(n)),\n\t\t\t),\n\t),\n\tm = new w.constructor(V + 1).fill(W + 1),\n) => {\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tassert(Number.isInteger(V) && V >= 0);\n\tassert(m.length >= V + 1);\n\tm[0] = 0;\n\tfor (let j = 1; j <= V; ++j) {\n\t\tlet temporary = m[j];\n\t\tfor (let i = 0; i < n; ++i) {\n\t\t\tconst wi = w[i];\n\t\t\tconst vi = v[i];\n\t\t\tassert(Number.isInteger(vi) && vi >= 0);\n\t\t\tconst k = j - vi;\n\t\t\t// TODO sort by value to avoid branching\n\t\t\t// from larger to smaller so that m is scanned\n\t\t\t// from left to right\n\t\t\tif (k >= 0) temporary = Math.min(temporary, m[k] + wi);\n\t\t}\n\n\t\tm[j] = temporary;\n\t}\n\n\tfor (let j = V; j > 0; --j) {\n\t\tif (m[j] <= W) return j;\n\t}\n\n\treturn 0;\n};\n\nexport default integerValuesKnapsackUnbounded;\n",
+    "content": "import assert from 'assert';\nimport {increasing} from '@aureooms/js-compare';\nimport {max, map, range} from '@aureooms/js-itertools';\n\n/**\n * Exact DP solution to the unbounded knapsack problem with integer values\n * given a known upper bound V on OPT. Runs in O(nV) time.\n *\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n * @param {Number|BigInt} zero The number 0.\n * @param {Number} V Any upper bound on OPT >= 0.\n * @param {Array} m Memory buffer.\n */\nconst integerValuesKnapsackUnbounded = (\n\tv,\n\tw,\n\tn,\n\tW,\n\tzero = 0,\n\tV = Math.floor(\n\t\tW *\n\t\t\tmax(\n\t\t\t\tincreasing,\n\t\t\t\tmap((i) => v[i] / w[i], range(n)),\n\t\t\t\tzero,\n\t\t\t),\n\t),\n\tm = new w.constructor(V + 1).fill(W + 1),\n) => {\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tassert(Number.isInteger(V) && V >= 0);\n\tassert(m.length >= V + 1);\n\tm[0] = 0;\n\tfor (let j = 1; j <= V; ++j) {\n\t\tlet temporary = m[j];\n\t\tfor (let i = 0; i < n; ++i) {\n\t\t\tconst wi = w[i];\n\t\t\tconst vi = v[i];\n\t\t\tassert(Number.isInteger(vi) && vi >= 0);\n\t\t\tconst k = j - vi;\n\t\t\t// TODO sort by value to avoid branching\n\t\t\t// from larger to smaller so that m is scanned\n\t\t\t// from left to right\n\t\t\tif (k >= 0) temporary = Math.min(temporary, m[k] + wi);\n\t\t}\n\n\t\tm[j] = temporary;\n\t}\n\n\tfor (let j = V; j > 0; --j) {\n\t\tif (m[j] <= W) return j;\n\t}\n\n\treturn 0;\n};\n\nexport default integerValuesKnapsackUnbounded;\n",
     "static": true,
     "longname": "/home/aureooms/dev/js/js-knapsack/src/integerValuesKnapsackUnbounded.js",
     "access": "public",
@@ -680,7 +723,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 52,
+    "__docId__": 54,
     "kind": "function",
     "name": "integerValuesKnapsackUnbounded",
     "memberof": "src/integerValuesKnapsackUnbounded.js",
@@ -693,7 +736,7 @@
     "importPath": "@aureooms/js-knapsack/src/integerValuesKnapsackUnbounded.js",
     "importStyle": "integerValuesKnapsackUnbounded",
     "description": "Exact DP solution to the unbounded knapsack problem with integer values\ngiven a known upper bound V on OPT. Runs in O(nV) time.",
-    "lineNumber": 16,
+    "lineNumber": 17,
     "params": [
       {
         "nullable": null,
@@ -738,6 +781,17 @@
       {
         "nullable": null,
         "types": [
+          "Number",
+          "BigInt"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "zero",
+        "description": "The number 0."
+      },
+      {
+        "nullable": null,
+        "types": [
           "Number"
         ],
         "spread": false,
@@ -763,7 +817,7 @@
     }
   },
   {
-    "__docId__": 53,
+    "__docId__": 55,
     "kind": "file",
     "name": "src/integerWeightsKnapsack.js",
     "content": "import assert from 'assert';\n\n/**\n * Exact DP solution to the 0-1 knapsack problem with integer weights.\n * Runs in O(nW) time.\n *\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n * @param {Array} m Memory buffer.\n */\nconst integerWeightsKnapsack = (\n\tv,\n\tw,\n\tn,\n\tW,\n\tm = new v.constructor(W + 1).fill(0),\n) => {\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tassert(Number.isInteger(W) && W >= 0);\n\tassert(m.length >= W + 1);\n\tfor (let i = 0; i < n; ++i) {\n\t\tconst wi = w[i];\n\t\tconst vi = v[i];\n\t\tassert(Number.isInteger(wi) && wi >= 0 && wi <= W);\n\t\tconst k = W - wi + 1;\n\t\tfor (let j = 0; j < k; ++j) {\n\t\t\tm[j] = Math.max(m[j], m[j + wi] + vi);\n\t\t}\n\t}\n\n\treturn m[0];\n};\n\nexport default integerWeightsKnapsack;\n",
@@ -774,7 +828,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 54,
+    "__docId__": 56,
     "kind": "function",
     "name": "integerWeightsKnapsack",
     "memberof": "src/integerWeightsKnapsack.js",
@@ -847,7 +901,7 @@
     }
   },
   {
-    "__docId__": 55,
+    "__docId__": 57,
     "kind": "file",
     "name": "src/integerWeightsKnapsackUnbounded.js",
     "content": "import assert from 'assert';\n\n/**\n * Exact DP solution to the unbounded knapsack problem with integer weights.\n * Runs in O(nW) time.\n *\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n * @param {Array} m Memory buffer.\n */\nconst integerWeightsKnapsackUnbounded = (\n\tv,\n\tw,\n\tn,\n\tW,\n\tm = new v.constructor(W + 1).fill(0),\n) => {\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tassert(Number.isInteger(W) && W >= 0);\n\tassert(m.length >= W + 1);\n\tfor (let j = 1; j <= W; ++j) {\n\t\tlet temporary = m[j];\n\t\tfor (let i = 0; i < n; ++i) {\n\t\t\tconst wi = w[i];\n\t\t\tconst vi = v[i];\n\t\t\tassert(Number.isInteger(wi) && wi >= 0 && wi <= W);\n\t\t\tconst k = j - wi;\n\t\t\t// TODO sort by weight to avoid branching\n\t\t\t// from larger to smaller so that m is scanned\n\t\t\t// from left to right\n\t\t\tif (k >= 0) temporary = Math.max(temporary, m[k] + vi);\n\t\t}\n\n\t\tm[j] = temporary;\n\t}\n\n\treturn m[W];\n};\n\nexport default integerWeightsKnapsackUnbounded;\n",
@@ -858,7 +912,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 56,
+    "__docId__": 58,
     "kind": "function",
     "name": "integerWeightsKnapsackUnbounded",
     "memberof": "src/integerWeightsKnapsackUnbounded.js",
@@ -931,7 +985,7 @@
     }
   },
   {
-    "__docId__": 57,
+    "__docId__": 59,
     "kind": "file",
     "name": "src/knapsackApprox.js",
     "content": "import assert from 'assert';\nimport {increasing} from '@aureooms/js-compare';\nimport {max, map, filter, range} from '@aureooms/js-itertools';\n\nimport integerValuesKnapsack from './integerValuesKnapsack';\n\n/**\n * (1-eps)-approx for the knapsack problem. Runs in O(N^3/eps) time.\n *\n * @param {Number} eps Approximation constant.\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n * @param {Number} P Any lower bound on OPT > 0.\n */\nconst knapsackApprox = (\n\teps,\n\tv,\n\tw,\n\tn,\n\tW,\n\tP = max(\n\t\tincreasing,\n\t\tmap(\n\t\t\t(i) => v[i],\n\t\t\tfilter((i) => w[i] <= W, range(n)),\n\t\t),\n\t),\n) => {\n\tassert(eps > 0 && eps < 1);\n\tassert(P > 0);\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tconst K = (eps * P) / n;\n\tconst u = Uint32Array.from(v, (vi) => Math.floor(vi / K));\n\t// TODO reconstruct solution\n\treturn K * integerValuesKnapsack(u, w, n, W);\n};\n\nexport default knapsackApprox;\n",
@@ -942,7 +996,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 58,
+    "__docId__": 60,
     "kind": "function",
     "name": "knapsackApprox",
     "memberof": "src/knapsackApprox.js",
@@ -1025,8 +1079,288 @@
     }
   },
   {
+    "__docId__": 61,
+    "kind": "file",
+    "name": "src/knapsackGreedy.js",
+    "content": "import assert from 'assert';\nimport {map, range, sorted, filter} from '@aureooms/js-itertools';\n\nimport Item from './Item';\nimport orderedByDecreasingUtility from './orderedByDecreasingUtility';\n\n/**\n * 1/2-approximation to the 0-1 knapsack problem.\n * Runs in O(n log n) time.\n *\n * Let OPT' be the value of the LP relaxation.\n * Let v_i be the values of the items ordered by utility.\n * Let k be the largest k such that sum(v[:k]) <= W.\n * Let t = (W-sum(w[:k])) / w_{k+1},\n * we have t < 1 and OPT' = sum(v[:k]) + t * v_{k+1}.\n * Hence sum(v[:k+1]) > OPT' >= OPT.\n * By partition one of { sum(v[:k]) , v_{k+1} } is at least OPT / 2.\n * Assuming w_i <= W for all i in [N] each of these is feasible.\n *\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n */\nconst knapsackGreedy = (v, w, n, W) => {\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tassert(W >= 0);\n\n\tconst items = sorted(\n\t\torderedByDecreasingUtility,\n\t\tfilter(\n\t\t\t(item) => item.w <= W,\n\t\t\tmap((i) => new Item(w[i], v[i]), range(n)),\n\t\t),\n\t);\n\treturn subroutine(W, items);\n};\n\nconst subroutine = (W, items) => {\n\tlet value = 0;\n\tlet capacity = W;\n\tfor (const {v, w} of items) {\n\t\tif (capacity < w) return Math.max(v, value);\n\t\tcapacity -= w;\n\t\tvalue += v;\n\t}\n\n\treturn value;\n};\n\nexport default knapsackGreedy;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-knapsack/src/knapsackGreedy.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "subroutine",
+    "memberof": "src/knapsackGreedy.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/knapsackGreedy.js~subroutine",
+    "access": "public",
+    "export": false,
+    "importPath": "@aureooms/js-knapsack/src/knapsackGreedy.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "params": [
+      {
+        "name": "W",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "items",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "knapsackGreedy",
+    "memberof": "src/knapsackGreedy.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/knapsackGreedy.js~knapsackGreedy",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-knapsack/src/knapsackGreedy.js",
+    "importStyle": "knapsackGreedy",
+    "description": "1/2-approximation to the 0-1 knapsack problem.\nRuns in O(n log n) time.\n\nLet OPT' be the value of the LP relaxation.\nLet v_i be the values of the items ordered by utility.\nLet k be the largest k such that sum(v[:k]) <= W.\nLet t = (W-sum(w[:k])) / w_{k+1},\nwe have t < 1 and OPT' = sum(v[:k]) + t * v_{k+1}.\nHence sum(v[:k+1]) > OPT' >= OPT.\nBy partition one of { sum(v[:k]) , v_{k+1} } is at least OPT / 2.\nAssuming w_i <= W for all i in [N] each of these is feasible.",
+    "lineNumber": 25,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "v",
+        "description": "Values."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "w",
+        "description": "Weights."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "n",
+        "description": "Size of the problem."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "W",
+        "description": "Size of the knapsack."
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/knapsackUnboundedGreedy.js",
+    "content": "import assert from 'assert';\nimport {map, range, sorted} from '@aureooms/js-itertools';\n\nimport Item from './Item';\nimport orderedByDecreasingUtility from './orderedByDecreasingUtility';\n\n/**\n * 1/2-approximation to the unbounded knapsack problem.\n * Runs in O(n log n) time.\n *\n * @param {Array} v Values.\n * @param {Array} w Weights.\n * @param {Number} n Size of the problem.\n * @param {Number} W Size of the knapsack.\n */\nconst knapsackUnboundedGreedy = (v, w, n, W) => {\n\tassert(v.length === n);\n\tassert(w.length === n);\n\tassert(W >= 0);\n\n\tconst items = sorted(\n\t\torderedByDecreasingUtility,\n\t\tmap((i) => new Item(w[i], v[i]), range(n)),\n\t);\n\treturn subroutine(W, items);\n};\n\nconst subroutine = (W, items) => {\n\tlet value = 0;\n\tlet capacity = W;\n\tfor (const {v, w} of items) {\n\t\tconst copies = Math.floor(capacity / w);\n\t\tcapacity -= copies * w;\n\t\tvalue += copies * v;\n\t}\n\n\treturn value;\n};\n\nexport default knapsackUnboundedGreedy;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-knapsack/src/knapsackUnboundedGreedy.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "function",
+    "name": "subroutine",
+    "memberof": "src/knapsackUnboundedGreedy.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/knapsackUnboundedGreedy.js~subroutine",
+    "access": "public",
+    "export": false,
+    "importPath": "@aureooms/js-knapsack/src/knapsackUnboundedGreedy.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "params": [
+      {
+        "name": "W",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "items",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "name": "knapsackUnboundedGreedy",
+    "memberof": "src/knapsackUnboundedGreedy.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/knapsackUnboundedGreedy.js~knapsackUnboundedGreedy",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-knapsack/src/knapsackUnboundedGreedy.js",
+    "importStyle": "knapsackUnboundedGreedy",
+    "description": "1/2-approximation to the unbounded knapsack problem.\nRuns in O(n log n) time.",
+    "lineNumber": 16,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "v",
+        "description": "Values."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "w",
+        "description": "Weights."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "n",
+        "description": "Size of the problem."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "W",
+        "description": "Size of the knapsack."
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "name": "src/orderedByDecreasingUtility.js",
+    "content": "import {fn, decreasing} from '@aureooms/js-compare';\n\nconst utility = (x) => x.v / x.w;\nconst orderedByDecreasingUtility = fn(decreasing, utility);\n\nexport default orderedByDecreasingUtility;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-knapsack/src/orderedByDecreasingUtility.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "utility",
+    "memberof": "src/orderedByDecreasingUtility.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/orderedByDecreasingUtility.js~utility",
+    "access": "public",
+    "export": false,
+    "importPath": "@aureooms/js-knapsack/src/orderedByDecreasingUtility.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "x",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "variable",
+    "name": "orderedByDecreasingUtility",
+    "memberof": "src/orderedByDecreasingUtility.js",
+    "static": true,
+    "longname": "src/orderedByDecreasingUtility.js~orderedByDecreasingUtility",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-knapsack/src/orderedByDecreasingUtility.js",
+    "importStyle": "orderedByDecreasingUtility",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
     "kind": "index",
-    "content": ":school_satchel: [@aureooms/js-knapsack](https://aureooms.github.io/js-knapsack)\n==\n\nKnapsack problem algorithms for JavaScript.\nSee [docs](https://aureooms.github.io/js-knapsack/index.html).\n\n> :building_construction: Caveat emptor! This is work in progress. Code may be\n> working. Documentation may be present. Coherence may be. Maybe.\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\n[![License](https://img.shields.io/github/license/aureooms/js-knapsack.svg)](https://raw.githubusercontent.com/aureooms/js-knapsack/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-knapsack.svg)](https://www.npmjs.org/package/@aureooms/js-knapsack)\n[![Build](https://img.shields.io/travis/aureooms/js-knapsack/main.svg)](https://travis-ci.org/aureooms/js-knapsack/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-knapsack.svg)](https://david-dm.org/aureooms/js-knapsack)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-knapsack.svg)](https://david-dm.org/aureooms/js-knapsack?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-knapsack.svg)](https://github.com/aureooms/js-knapsack/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-knapsack.svg)](https://www.npmjs.org/package/@aureooms/js-knapsack)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-knapsack/main.svg)](https://codecov.io/gh/aureooms/js-knapsack)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-knapsack/badge.svg)](https://aureooms.github.io/js-knapsack/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-knapsack)](https://bundlephobia.com/result?p=@aureooms/js-knapsack)\n",
+    "content": ":school_satchel: [@aureooms/js-knapsack](https://aureooms.github.io/js-knapsack)\n==\n\nKnapsack problem algorithms for JavaScript.\nSee [docs](https://aureooms.github.io/js-knapsack/index.html).\n\n> :building_construction: Caveat emptor! This is work in progress. Code may be\n> working. Documentation may be present. Coherence may be. Maybe.\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\n[![License](https://img.shields.io/github/license/aureooms/js-knapsack.svg)](https://raw.githubusercontent.com/aureooms/js-knapsack/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-knapsack.svg)](https://www.npmjs.org/package/@aureooms/js-knapsack)\n[![Build](https://img.shields.io/travis/aureooms/js-knapsack/main.svg)](https://travis-ci.org/aureooms/js-knapsack/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-knapsack.svg)](https://david-dm.org/aureooms/js-knapsack)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-knapsack.svg)](https://david-dm.org/aureooms/js-knapsack?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-knapsack.svg)](https://github.com/aureooms/js-knapsack/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-knapsack.svg)](https://www.npmjs.org/package/@aureooms/js-knapsack)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-knapsack/main.svg)](https://codecov.io/gh/aureooms/js-knapsack)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-knapsack/badge.svg)](https://aureooms.github.io/js-knapsack/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-knapsack)](https://bundlephobia.com/result?p=@aureooms/js-knapsack)\n\n## :book: References\n\n  - The [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem)\n    explained in Wikipedia.\n",
     "longname": "/home/aureooms/dev/js/js-knapsack/README.md",
     "name": "./README.md",
     "static": true,
@@ -1034,7 +1368,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-knapsack\",\n  \"description\": \"Knapsack problem algorithms for JavaScript\",\n  \"version\": \"0.0.0\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"env\": {\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"development\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"production\": {\n        \"plugins\": [\n          \"babel-plugin-unassert\",\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-knapsack/issues\"\n  },\n  \"dependencies\": {\n    \"@aureooms/js-compare\": \"^1.4.8\",\n    \"@aureooms/js-itertools\": \"^4.1.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"7.11.6\",\n    \"@babel/core\": \"7.11.6\",\n    \"@babel/preset-env\": \"7.11.5\",\n    \"@babel/register\": \"7.11.5\",\n    \"ava\": \"3.13.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"np\": \"6.5.0\",\n    \"nyc\": \"15.1.0\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.33.1\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-knapsack\",\n  \"keywords\": [\n    \"agpl\",\n    \"algorithms\",\n    \"complete\",\n    \"computer\",\n    \"dynamic\",\n    \"in\",\n    \"javascript\",\n    \"knapsack\",\n    \"meet\",\n    \"middle\",\n    \"np\",\n    \"polynomial\",\n    \"programming\",\n    \"pseudo\",\n    \"reductions\",\n    \"science\",\n    \"the\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-knapsack\"\n  },\n  \"scripts\": {\n    \"build\": \"babel --delete-dir-on-start --env-name production src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"dev\": \"npm run lint -- --fix && npm run cover -- -- -st --fail-fast\",\n    \"esdoc\": \"esdoc\",\n    \"lint\": \"xo\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava\",\n    \"travis\": \"npm run lint && npm run cover\"\n  },\n  \"sideEffects\": false,\n  \"xo\": {\n    \"prettier\": true,\n    \"ignore\": [\n      \"lib\"\n    ],\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@aureooms/js-knapsack\",\n  \"description\": \"Knapsack problem algorithms for JavaScript\",\n  \"version\": \"0.0.0\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"env\": {\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"development\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"production\": {\n        \"plugins\": [\n          \"babel-plugin-unassert\",\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-knapsack/issues\"\n  },\n  \"dependencies\": {\n    \"@aureooms/js-compare\": \"^1.4.8\",\n    \"@aureooms/js-itertools\": \"^4.1.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"7.12.1\",\n    \"@babel/core\": \"7.12.1\",\n    \"@babel/preset-env\": \"7.12.1\",\n    \"@babel/register\": \"7.12.1\",\n    \"ava\": \"3.13.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"np\": \"6.5.0\",\n    \"nyc\": \"15.1.0\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.33.1\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-knapsack\",\n  \"keywords\": [\n    \"agpl\",\n    \"algorithms\",\n    \"complete\",\n    \"computer\",\n    \"dynamic\",\n    \"in\",\n    \"javascript\",\n    \"knapsack\",\n    \"meet\",\n    \"middle\",\n    \"np\",\n    \"polynomial\",\n    \"programming\",\n    \"pseudo\",\n    \"reductions\",\n    \"science\",\n    \"the\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-knapsack\"\n  },\n  \"scripts\": {\n    \"build\": \"babel --delete-dir-on-start --env-name production src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"dev\": \"npm run lint -- --fix && npm run cover -- -- -st --fail-fast\",\n    \"esdoc\": \"esdoc\",\n    \"lint\": \"xo\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava\",\n    \"travis\": \"npm run lint && npm run cover\"\n  },\n  \"sideEffects\": false,\n  \"xo\": {\n    \"prettier\": true,\n    \"ignore\": [\n      \"lib\"\n    ],\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
     "longname": "/home/aureooms/dev/js/js-knapsack/package.json",
     "name": "package.json",
     "static": true,

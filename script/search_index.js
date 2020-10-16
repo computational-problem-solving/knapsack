@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "@aureooms/js-knapsack/src/item.js~item",
+    "function/index.html#static-function-Item",
+    "<span>Item</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/Item.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-knapsack/src/integervaluesknapsack.js~integervaluesknapsack",
     "function/index.html#static-function-integerValuesKnapsack",
     "<span>integerValuesKnapsack</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerValuesKnapsack.js</span>",
@@ -28,6 +34,24 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-knapsackApprox",
     "<span>knapsackApprox</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/knapsackApprox.js</span>",
     "function"
+  ],
+  [
+    "@aureooms/js-knapsack/src/knapsackgreedy.js~knapsackgreedy",
+    "function/index.html#static-function-knapsackGreedy",
+    "<span>knapsackGreedy</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/knapsackGreedy.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-knapsack/src/knapsackunboundedgreedy.js~knapsackunboundedgreedy",
+    "function/index.html#static-function-knapsackUnboundedGreedy",
+    "<span>knapsackUnboundedGreedy</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/knapsackUnboundedGreedy.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-knapsack/src/orderedbydecreasingutility.js~orderedbydecreasingutility",
+    "variable/index.html#static-variable-orderedByDecreasingUtility",
+    "<span>orderedByDecreasingUtility</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/orderedByDecreasingUtility.js</span>",
+    "variable"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -312,6 +336,12 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/item.js",
+    "file/src/Item.js.html",
+    "src/Item.js",
+    "file"
+  ],
+  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
@@ -345,6 +375,24 @@ window.esdocSearchIndex = [
     "src/knapsackapprox.js",
     "file/src/knapsackApprox.js.html",
     "src/knapsackApprox.js",
+    "file"
+  ],
+  [
+    "src/knapsackgreedy.js",
+    "file/src/knapsackGreedy.js.html",
+    "src/knapsackGreedy.js",
+    "file"
+  ],
+  [
+    "src/knapsackunboundedgreedy.js",
+    "file/src/knapsackUnboundedGreedy.js.html",
+    "src/knapsackUnboundedGreedy.js",
+    "file"
+  ],
+  [
+    "src/orderedbydecreasingutility.js",
+    "file/src/orderedByDecreasingUtility.js.html",
+    "src/orderedByDecreasingUtility.js",
     "file"
   ]
 ]

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | @aureooms/js-knapsack</title>
+  <title data-ice="title">src/knapsackGreedy.js | @aureooms/js-knapsack</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -42,41 +42,59 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Item from &apos;./Item&apos;;
-import integerValuesKnapsack from &apos;./integerValuesKnapsack&apos;;
-import integerValuesKnapsackUnbounded from &apos;./integerValuesKnapsackUnbounded&apos;;
-import integerWeightsKnapsack from &apos;./integerWeightsKnapsack&apos;;
-import integerWeightsKnapsackUnbounded from &apos;./integerWeightsKnapsackUnbounded&apos;;
-import knapsackApprox from &apos;./knapsackApprox&apos;;
-import knapsackGreedy from &apos;./knapsackGreedy&apos;;
-import knapsackUnboundedGreedy from &apos;./knapsackUnboundedGreedy&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/knapsackGreedy.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import {map, range, sorted, filter} from &apos;@aureooms/js-itertools&apos;;
+
+import Item from &apos;./Item&apos;;
 import orderedByDecreasingUtility from &apos;./orderedByDecreasingUtility&apos;;
 
-/* eslint import/no-anonymous-default-export: [2, {&quot;allowObject&quot;: true}] */
-export default {
-	Item,
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
-	knapsackGreedy,
-	knapsackUnboundedGreedy,
-	orderedByDecreasingUtility,
+/**
+ * 1/2-approximation to the 0-1 knapsack problem.
+ * Runs in O(n log n) time.
+ *
+ * Let OPT&apos; be the value of the LP relaxation.
+ * Let v_i be the values of the items ordered by utility.
+ * Let k be the largest k such that sum(v[:k]) &lt;= W.
+ * Let t = (W-sum(w[:k])) / w_{k+1},
+ * we have t &lt; 1 and OPT&apos; = sum(v[:k]) + t * v_{k+1}.
+ * Hence sum(v[:k+1]) &gt; OPT&apos; &gt;= OPT.
+ * By partition one of { sum(v[:k]) , v_{k+1} } is at least OPT / 2.
+ * Assuming w_i &lt;= W for all i in [N] each of these is feasible.
+ *
+ * @param {Array} v Values.
+ * @param {Array} w Weights.
+ * @param {Number} n Size of the problem.
+ * @param {Number} W Size of the knapsack.
+ */
+const knapsackGreedy = (v, w, n, W) =&gt; {
+	assert(v.length === n);
+	assert(w.length === n);
+	assert(W &gt;= 0);
+
+	const items = sorted(
+		orderedByDecreasingUtility,
+		filter(
+			(item) =&gt; item.w &lt;= W,
+			map((i) =&gt; new Item(w[i], v[i]), range(n)),
+		),
+	);
+	return subroutine(W, items);
 };
 
-export {
-	Item,
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
-	knapsackGreedy,
-	knapsackUnboundedGreedy,
-	orderedByDecreasingUtility,
+const subroutine = (W, items) =&gt; {
+	let value = 0;
+	let capacity = W;
+	for (const {v, w} of items) {
+		if (capacity &lt; w) return Math.max(v, value);
+		capacity -= w;
+		value += v;
+	}
+
+	return value;
 };
+
+export default knapsackGreedy;
 </code></pre>
 
 </div>

@@ -29,11 +29,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-integerValuesKnapsack">integerValuesKnapsack</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Item">Item</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-integerValuesKnapsack">integerValuesKnapsack</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-integerValuesKnapsackUnbounded">integerValuesKnapsackUnbounded</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-integerWeightsKnapsack">integerWeightsKnapsack</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-integerWeightsKnapsackUnbounded">integerWeightsKnapsackUnbounded</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-knapsackApprox">knapsackApprox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-knapsackGreedy">knapsackGreedy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-knapsackUnboundedGreedy">knapsackUnboundedGreedy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-orderedByDecreasingUtility">orderedByDecreasingUtility</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -51,6 +55,7 @@ import {max, map, range} from &apos;@aureooms/js-itertools&apos;;
  * @param {Array} w Weights.
  * @param {Number} n Size of the problem.
  * @param {Number} W Size of the knapsack.
+ * @param {Number|BigInt} zero The number 0.
  * @param {Number} V Any upper bound on OPT &gt;= 0.
  * @param {Array} m Memory buffer.
  */
@@ -59,11 +64,13 @@ const integerValuesKnapsackUnbounded = (
 	w,
 	n,
 	W,
+	zero = 0,
 	V = Math.floor(
 		W *
 			max(
 				increasing,
 				map((i) =&gt; v[i] / w[i], range(n)),
+				zero,
 			),
 	),
 	m = new w.constructor(V + 1).fill(W + 1),

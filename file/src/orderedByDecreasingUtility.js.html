@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | @aureooms/js-knapsack</title>
+  <title data-ice="title">src/orderedByDecreasingUtility.js | @aureooms/js-knapsack</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -42,41 +42,13 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Item from &apos;./Item&apos;;
-import integerValuesKnapsack from &apos;./integerValuesKnapsack&apos;;
-import integerValuesKnapsackUnbounded from &apos;./integerValuesKnapsackUnbounded&apos;;
-import integerWeightsKnapsack from &apos;./integerWeightsKnapsack&apos;;
-import integerWeightsKnapsackUnbounded from &apos;./integerWeightsKnapsackUnbounded&apos;;
-import knapsackApprox from &apos;./knapsackApprox&apos;;
-import knapsackGreedy from &apos;./knapsackGreedy&apos;;
-import knapsackUnboundedGreedy from &apos;./knapsackUnboundedGreedy&apos;;
-import orderedByDecreasingUtility from &apos;./orderedByDecreasingUtility&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/orderedByDecreasingUtility.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {fn, decreasing} from &apos;@aureooms/js-compare&apos;;
 
-/* eslint import/no-anonymous-default-export: [2, {&quot;allowObject&quot;: true}] */
-export default {
-	Item,
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
-	knapsackGreedy,
-	knapsackUnboundedGreedy,
-	orderedByDecreasingUtility,
-};
+const utility = (x) =&gt; x.v / x.w;
+const orderedByDecreasingUtility = fn(decreasing, utility);
 
-export {
-	Item,
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
-	knapsackGreedy,
-	knapsackUnboundedGreedy,
-	orderedByDecreasingUtility,
-};
+export default orderedByDecreasingUtility;
 </code></pre>
 
 </div>

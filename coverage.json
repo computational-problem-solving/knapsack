@@ -1,8 +1,15 @@
 {
-  "coverage": "100%",
-  "expectCount": 5,
-  "actualCount": 5,
+  "coverage": "58.33%",
+  "expectCount": 12,
+  "actualCount": 7,
   "files": {
+    "src/Item.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
     "src/integerValuesKnapsack.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -27,6 +34,28 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
+    },
+    "src/knapsackGreedy.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        40
+      ]
+    },
+    "src/knapsackUnboundedGreedy.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        28
+      ]
+    },
+    "src/orderedByDecreasingUtility.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4
+      ]
     }
   }
 }

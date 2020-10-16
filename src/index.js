@@ -4,6 +4,7 @@ import integerValuesKnapsackUnbounded from './integerValuesKnapsackUnbounded';
 import integerWeightsKnapsack from './integerWeightsKnapsack';
 import integerWeightsKnapsackUnbounded from './integerWeightsKnapsackUnbounded';
 import knapsackApprox from './knapsackApprox';
+import knapsackGreedy from './knapsackGreedy';
 import knapsackUnboundedGreedy from './knapsackUnboundedGreedy';
 import orderedByDecreasingUtility from './orderedByDecreasingUtility';
 
@@ -15,6 +16,7 @@ export default {
 	integerWeightsKnapsack,
 	integerWeightsKnapsackUnbounded,
 	knapsackApprox,
+	knapsackGreedy,
 	knapsackUnboundedGreedy,
 	orderedByDecreasingUtility,
 };
@@ -26,6 +28,7 @@ export {
 	integerWeightsKnapsack,
 	integerWeightsKnapsackUnbounded,
 	knapsackApprox,
+	knapsackGreedy,
 	knapsackUnboundedGreedy,
 	orderedByDecreasingUtility,
 };

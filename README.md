@@ -24,3 +24,8 @@ See [docs](https://aureooms.github.io/js-knapsack/index.html).
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-knapsack/badge.svg)](https://aureooms.github.io/js-knapsack/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-knapsack)](https://bundlephobia.com/result?p=@aureooms/js-knapsack)
+
+## :book: References
+
+  - The [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem)
+    explained in Wikipedia.

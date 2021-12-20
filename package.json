@@ -104,7 +104,8 @@
     "nyc": "15.1.0",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.9",
-    "xo": "0.47.0"
+    "xo": "0.47.0",
+    "fixpack": "4.0.0"
   },
   "files": [
     "lib"

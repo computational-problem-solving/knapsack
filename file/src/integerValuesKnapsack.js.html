@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/integerValuesKnapsack.js | @aureooms/js-knapsack</title>
+  <title data-ice="title">src/integerValuesKnapsack.js | @problem-solving/knapsack</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Knapsack problem algorithms for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-knapsack"><meta property="twitter:description" content="Knapsack problem algorithms for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Knapsack problem algorithms for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@problem-solving/knapsack"><meta property="twitter:description" content="Knapsack problem algorithms for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-knapsack"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/computational-problem-solving/knapsack"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -44,7 +44,8 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/integerValuesKnapsack.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
-import {sum} from &apos;@aureooms/js-itertools&apos;;
+
+import {sum} from &apos;@iterable-iterator/reduce&apos;;
 
 /**
  * Exact DP solution to the 0-1 knapsack problem with integer values given a known
@@ -56,6 +57,7 @@ import {sum} from &apos;@aureooms/js-itertools&apos;;
  * @param {Number} W Size of the knapsack.
  * @param {Number} V Any upper bound on OPT &gt;= 0.
  * @param {Array} m Memory buffer.
+ * @return {Number} Objective value of the optimum.
  */
 const integerValuesKnapsack = (
 	v,

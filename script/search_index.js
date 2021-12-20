@@ -1,56 +1,56 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-knapsack/src/item.js~item",
+    "@problem-solving/knapsack/src/item.js~item",
     "function/index.html#static-function-Item",
-    "<span>Item</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/Item.js</span>",
+    "<span>Item</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/Item.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/integervaluesknapsack.js~integervaluesknapsack",
+    "@problem-solving/knapsack/src/integervaluesknapsack.js~integervaluesknapsack",
     "function/index.html#static-function-integerValuesKnapsack",
-    "<span>integerValuesKnapsack</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerValuesKnapsack.js</span>",
+    "<span>integerValuesKnapsack</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/integerValuesKnapsack.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/integervaluesknapsackunbounded.js~integervaluesknapsackunbounded",
+    "@problem-solving/knapsack/src/integervaluesknapsackunbounded.js~integervaluesknapsackunbounded",
     "function/index.html#static-function-integerValuesKnapsackUnbounded",
-    "<span>integerValuesKnapsackUnbounded</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerValuesKnapsackUnbounded.js</span>",
+    "<span>integerValuesKnapsackUnbounded</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/integerValuesKnapsackUnbounded.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/integerweightsknapsack.js~integerweightsknapsack",
+    "@problem-solving/knapsack/src/integerweightsknapsack.js~integerweightsknapsack",
     "function/index.html#static-function-integerWeightsKnapsack",
-    "<span>integerWeightsKnapsack</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerWeightsKnapsack.js</span>",
+    "<span>integerWeightsKnapsack</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/integerWeightsKnapsack.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/integerweightsknapsackunbounded.js~integerweightsknapsackunbounded",
+    "@problem-solving/knapsack/src/integerweightsknapsackunbounded.js~integerweightsknapsackunbounded",
     "function/index.html#static-function-integerWeightsKnapsackUnbounded",
-    "<span>integerWeightsKnapsackUnbounded</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/integerWeightsKnapsackUnbounded.js</span>",
+    "<span>integerWeightsKnapsackUnbounded</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/integerWeightsKnapsackUnbounded.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/knapsackapprox.js~knapsackapprox",
+    "@problem-solving/knapsack/src/knapsackapprox.js~knapsackapprox",
     "function/index.html#static-function-knapsackApprox",
-    "<span>knapsackApprox</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/knapsackApprox.js</span>",
+    "<span>knapsackApprox</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/knapsackApprox.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/knapsackgreedy.js~knapsackgreedy",
+    "@problem-solving/knapsack/src/knapsackgreedy.js~knapsackgreedy",
     "function/index.html#static-function-knapsackGreedy",
-    "<span>knapsackGreedy</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/knapsackGreedy.js</span>",
+    "<span>knapsackGreedy</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/knapsackGreedy.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/knapsackunboundedgreedy.js~knapsackunboundedgreedy",
+    "@problem-solving/knapsack/src/knapsackunboundedgreedy.js~knapsackunboundedgreedy",
     "function/index.html#static-function-knapsackUnboundedGreedy",
-    "<span>knapsackUnboundedGreedy</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/knapsackUnboundedGreedy.js</span>",
+    "<span>knapsackUnboundedGreedy</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/knapsackUnboundedGreedy.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-knapsack/src/orderedbydecreasingutility.js~orderedbydecreasingutility",
+    "@problem-solving/knapsack/src/orderedbydecreasingutility.js~orderedbydecreasingutility",
     "variable/index.html#static-variable-orderedByDecreasingUtility",
-    "<span>orderedByDecreasingUtility</span> <span class=\"search-result-import-path\">@aureooms/js-knapsack/src/orderedByDecreasingUtility.js</span>",
+    "<span>orderedByDecreasingUtility</span> <span class=\"search-result-import-path\">@problem-solving/knapsack/src/orderedByDecreasingUtility.js</span>",
     "variable"
   ],
   [

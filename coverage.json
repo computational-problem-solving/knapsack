@@ -39,22 +39,22 @@
       "expectCount": 2,
       "actualCount": 1,
       "undocumentLines": [
-        40
+        45
       ]
     },
     "src/knapsackUnboundedGreedy.js": {
       "expectCount": 2,
       "actualCount": 1,
       "undocumentLines": [
-        28
+        32
       ]
     },
     "src/orderedByDecreasingUtility.js": {
       "expectCount": 2,
       "actualCount": 0,
       "undocumentLines": [
-        3,
-        4
+        4,
+        5
       ]
     }
   }

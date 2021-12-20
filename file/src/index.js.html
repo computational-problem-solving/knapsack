@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | @aureooms/js-knapsack</title>
+  <title data-ice="title">src/index.js | @problem-solving/knapsack</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Knapsack problem algorithms for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-knapsack"><meta property="twitter:description" content="Knapsack problem algorithms for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Knapsack problem algorithms for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@problem-solving/knapsack"><meta property="twitter:description" content="Knapsack problem algorithms for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-knapsack"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/computational-problem-solving/knapsack"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -43,15 +43,15 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Item from &apos;./Item&apos;;
-import integerValuesKnapsack from &apos;./integerValuesKnapsack&apos;;
-import integerValuesKnapsackUnbounded from &apos;./integerValuesKnapsackUnbounded&apos;;
-import integerWeightsKnapsack from &apos;./integerWeightsKnapsack&apos;;
-import integerWeightsKnapsackUnbounded from &apos;./integerWeightsKnapsackUnbounded&apos;;
-import knapsackApprox from &apos;./knapsackApprox&apos;;
-import knapsackGreedy from &apos;./knapsackGreedy&apos;;
-import knapsackUnboundedGreedy from &apos;./knapsackUnboundedGreedy&apos;;
-import orderedByDecreasingUtility from &apos;./orderedByDecreasingUtility&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Item from &apos;./Item.js&apos;;
+import integerValuesKnapsack from &apos;./integerValuesKnapsack.js&apos;;
+import integerValuesKnapsackUnbounded from &apos;./integerValuesKnapsackUnbounded.js&apos;;
+import integerWeightsKnapsack from &apos;./integerWeightsKnapsack.js&apos;;
+import integerWeightsKnapsackUnbounded from &apos;./integerWeightsKnapsackUnbounded.js&apos;;
+import knapsackApprox from &apos;./knapsackApprox.js&apos;;
+import knapsackGreedy from &apos;./knapsackGreedy.js&apos;;
+import knapsackUnboundedGreedy from &apos;./knapsackUnboundedGreedy.js&apos;;
+import orderedByDecreasingUtility from &apos;./orderedByDecreasingUtility.js&apos;;
 
 /* eslint import/no-anonymous-default-export: [2, {&quot;allowObject&quot;: true}] */
 export default {
@@ -66,17 +66,15 @@ export default {
 	orderedByDecreasingUtility,
 };
 
-export {
-	Item,
-	integerValuesKnapsack,
-	integerValuesKnapsackUnbounded,
-	integerWeightsKnapsack,
-	integerWeightsKnapsackUnbounded,
-	knapsackApprox,
-	knapsackGreedy,
-	knapsackUnboundedGreedy,
-	orderedByDecreasingUtility,
-};
+export {default as Item} from &apos;./Item.js&apos;;
+export {default as integerValuesKnapsackUnbounded} from &apos;./integerValuesKnapsackUnbounded.js&apos;;
+export {default as integerValuesKnapsack} from &apos;./integerValuesKnapsack.js&apos;;
+export {default as integerWeightsKnapsackUnbounded} from &apos;./integerWeightsKnapsackUnbounded.js&apos;;
+export {default as integerWeightsKnapsack} from &apos;./integerWeightsKnapsack.js&apos;;
+export {default as knapsackGreedy} from &apos;./knapsackGreedy.js&apos;;
+export {default as knapsackApprox} from &apos;./knapsackApprox.js&apos;;
+export {default as orderedByDecreasingUtility} from &apos;./orderedByDecreasingUtility.js&apos;;
+export {default as knapsackUnboundedGreedy} from &apos;./knapsackUnboundedGreedy.js&apos;;
 </code></pre>
 
 </div>

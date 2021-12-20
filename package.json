@@ -140,6 +140,12 @@
       "test": {
         "sourceMaps": "inline",
         "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": "current node"
+            }
+          ],
           "babel-preset-power-assert"
         ],
         "plugins": [
@@ -147,7 +153,6 @@
             "transform-remove-console",
             {
               "exclude": [
-                "debug",
                 "log",
                 "error",
                 "warn"

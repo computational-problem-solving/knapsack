@@ -13,8 +13,7 @@ See [docs](https://computational-problem-solving.github.io/knapsack/index.html).
 [![License](https://img.shields.io/github/license/computational-problem-solving/knapsack.svg)](https://raw.githubusercontent.com/computational-problem-solving/knapsack/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@problem-solving/knapsack.svg)](https://www.npmjs.org/package/@problem-solving/knapsack)
 [![Build](https://img.shields.io/travis/computational-problem-solving/knapsack/main.svg)](https://travis-ci.org/computational-problem-solving/knapsack/branches)
-[![Dependencies](https://img.shields.io/david/computational-problem-solving/knapsack.svg)](https://david-dm.org/computational-problem-solving/knapsack)
-[![Dev dependencies](https://img.shields.io/david/dev/computational-problem-solving/knapsack.svg)](https://david-dm.org/computational-problem-solving/knapsack?type=dev)
+[![Dependencies](https://img.shields.io/librariesio/github/computational-problem-solving/knapsack.svg)](https://github.com/computational-problem-solving/knapsack/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/computational-problem-solving/knapsack.svg)](https://github.com/computational-problem-solving/knapsack/issues)
 [![Downloads](https://img.shields.io/npm/dm/@problem-solving/knapsack.svg)](https://www.npmjs.org/package/@problem-solving/knapsack)
 

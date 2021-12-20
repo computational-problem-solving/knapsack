@@ -5,7 +5,7 @@ import {map} from '@iterable-iterator/map';
 import {filter} from '@iterable-iterator/filter';
 import {range} from '@iterable-iterator/range';
 
-import integerValuesKnapsack from './integerValuesKnapsack';
+import integerValuesKnapsack from './integerValuesKnapsack.js';
 
 /**
  * (1-eps)-approx for the knapsack problem. Runs in O(N^3/eps) time.

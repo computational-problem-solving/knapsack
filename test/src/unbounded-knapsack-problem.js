@@ -7,7 +7,7 @@ import {
 	integerValuesKnapsackUnbounded,
 	integerWeightsKnapsackUnbounded,
 	knapsackUnboundedGreedy,
-} from '../../src';
+} from '../../src/index.js';
 
 const macro = (t, solve, _name, v, w, n, W, opt, approx) => {
 	t.is(n, v.length);

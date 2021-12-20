@@ -4,8 +4,8 @@ import {range} from '@iterable-iterator/range';
 import {sorted} from '@iterable-iterator/sorted';
 import {filter} from '@iterable-iterator/filter';
 
-import Item from './Item';
-import orderedByDecreasingUtility from './orderedByDecreasingUtility';
+import Item from './Item.js';
+import orderedByDecreasingUtility from './orderedByDecreasingUtility.js';
 
 /**
  * 1/2-approximation to the 0-1 knapsack problem.

@@ -16,6 +16,8 @@ import integerValuesKnapsack from './integerValuesKnapsack.js';
  * @param {Number} n Size of the problem.
  * @param {Number} W Size of the knapsack.
  * @param {Number} P Any lower bound on OPT > 0.
+ * @return {Number} Lower bound on the objective value of a solution, that is
+ * at least 1-eps the objective value of the optimum.
  */
 const knapsackApprox = (
 	eps,

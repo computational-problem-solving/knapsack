@@ -15,6 +15,7 @@ import {range} from '@iterable-iterator/range';
  * @param {Number|BigInt} zero The number 0.
  * @param {Number} V Any upper bound on OPT >= 0.
  * @param {Array} m Memory buffer.
+ * @return {Number} Objective value of the optimum.
  */
 const integerValuesKnapsackUnbounded = (
 	v,

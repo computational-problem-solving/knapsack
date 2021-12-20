@@ -14,6 +14,8 @@ import orderedByDecreasingUtility from './orderedByDecreasingUtility.js';
  * @param {Array} w Weights.
  * @param {Number} n Size of the problem.
  * @param {Number} W Size of the knapsack.
+ * @return {Number} Lower bound on the objective value of a solution, that is
+ * at least half the objective value of the optimum.
  */
 const knapsackUnboundedGreedy = (v, w, n, W) => {
 	assert(v.length === n);

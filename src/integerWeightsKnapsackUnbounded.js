@@ -9,6 +9,7 @@ import assert from 'assert';
  * @param {Number} n Size of the problem.
  * @param {Number} W Size of the knapsack.
  * @param {Array} m Memory buffer.
+ * @return {Number} Objective value of the optimum.
  */
 const integerWeightsKnapsackUnbounded = (
 	v,

@@ -12,6 +12,7 @@ import {sum} from '@iterable-iterator/reduce';
  * @param {Number} W Size of the knapsack.
  * @param {Number} V Any upper bound on OPT >= 0.
  * @param {Array} m Memory buffer.
+ * @return {Number} Objective value of the optimum.
  */
 const integerValuesKnapsack = (
 	v,

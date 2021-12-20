@@ -1,14 +1,25 @@
 :school_satchel: [@problem-solving/knapsack](https://computational-problem-solving.github.io/knapsack)
 ==
 
+<p align="center">
+<a href="https://xkcd.com/287">
+<img src="https://imgs.xkcd.com/comics/np_complete.png" width="600">
+</a><br/>
+© <a href="https://xkcd.com">xkcd.com</a>
+</p>
+
 Knapsack problem algorithms for JavaScript.
 See [docs](https://computational-problem-solving.github.io/knapsack/index.html).
 
-> :building_construction: Caveat emptor! This is work in progress. Code may be
-> working. Documentation may be present. Coherence may be. Maybe.
+```js
+import {
+	knapsackGreedy,
+	knapsackApprox,
+} from '@problem-solving/knapsack';
 
-> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
-> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
+knapsackGreedy(n, v, w, W); // 1/2 approximation
+knapsackApprox(eps, n, v, w, W); // 1-eps approximation
+```
 
 [![License](https://img.shields.io/github/license/computational-problem-solving/knapsack.svg)](https://raw.githubusercontent.com/computational-problem-solving/knapsack/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@problem-solving/knapsack.svg)](https://www.npmjs.org/package/@problem-solving/knapsack)
@@ -27,4 +38,4 @@ See [docs](https://computational-problem-solving.github.io/knapsack/index.html).
 ## :book: References
 
   - The [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem)
-    explained in Wikipedia.
+    explained at Wikipedia.

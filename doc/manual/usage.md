@@ -5,14 +5,14 @@
 
 First, require the polyfill at the entry point of your application
 ```js
-require( 'regenerator-runtime/runtime' );
+await import( 'regenerator-runtime/runtime.js' );
 // or
 import 'regenerator-runtime/runtime.js' ;
 ```
 
 Then, import the library where needed
 ```js
-const knapsack = require( '@problem-solving/knapsack' ) ;
+const knapsack = await import( '@problem-solving/knapsack' ) ;
 // or
 import * as knapsack from '@problem-solving/knapsack' ;
 ```

@@ -1,7 +1,7 @@
 {
   "name": "@problem-solving/knapsack",
   "description": "Knapsack problem algorithms for JavaScript",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "AGPL-3.0",
   "author": "make-github-pseudonymous-again",
   "homepage": "https://computational-problem-solving.github.io/knapsack",

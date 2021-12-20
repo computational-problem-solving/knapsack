@@ -1,6 +1,7 @@
 import test from 'ava';
 
-import {all, map} from '@aureooms/js-itertools';
+import {all} from '@iterable-iterator/reduce';
+import {map} from '@iterable-iterator/map';
 
 import {
 	integerValuesKnapsackUnbounded,

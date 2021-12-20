@@ -8,15 +8,15 @@ or [jspm](https://jspm.org/docs).
 
 ### yarn
 ```terminal
-yarn add @aureooms/js-knapsack
+yarn add @problem-solving/knapsack
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-knapsack --save
+npm install @problem-solving/knapsack --save
 ```
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-knapsack
+jspm install npm:@problem-solving/knapsack
 ```

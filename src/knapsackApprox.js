@@ -1,6 +1,9 @@
 import assert from 'assert';
-import {increasing} from '@aureooms/js-compare';
-import {max, map, filter, range} from '@aureooms/js-itertools';
+import {increasing} from '@total-order/primitive';
+import {max} from '@iterable-iterator/reduce';
+import {map} from '@iterable-iterator/map';
+import {filter} from '@iterable-iterator/filter';
+import {range} from '@iterable-iterator/range';
 
 import integerValuesKnapsack from './integerValuesKnapsack';
 

@@ -1,5 +1,7 @@
 import assert from 'assert';
-import {map, range, sorted} from '@aureooms/js-itertools';
+import {map} from '@iterable-iterator/map';
+import {range} from '@iterable-iterator/range';
+import {sorted} from '@iterable-iterator/sorted';
 
 import Item from './Item';
 import orderedByDecreasingUtility from './orderedByDecreasingUtility';

@@ -1,8 +1,8 @@
-:school_satchel: [@aureooms/js-knapsack](https://aureooms.github.io/js-knapsack)
+:school_satchel: [@problem-solving/knapsack](https://computational-problem-solving.github.io/knapsack)
 ==
 
 Knapsack problem algorithms for JavaScript.
-See [docs](https://aureooms.github.io/js-knapsack/index.html).
+See [docs](https://computational-problem-solving.github.io/knapsack/index.html).
 
 > :building_construction: Caveat emptor! This is work in progress. Code may be
 > working. Documentation may be present. Coherence may be. Maybe.
@@ -10,20 +10,20 @@ See [docs](https://aureooms.github.io/js-knapsack/index.html).
 > :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 
-[![License](https://img.shields.io/github/license/aureooms/js-knapsack.svg)](https://raw.githubusercontent.com/aureooms/js-knapsack/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/@aureooms/js-knapsack.svg)](https://www.npmjs.org/package/@aureooms/js-knapsack)
-[![Build](https://img.shields.io/travis/aureooms/js-knapsack/main.svg)](https://travis-ci.org/aureooms/js-knapsack/branches)
-[![Dependencies](https://img.shields.io/david/aureooms/js-knapsack.svg)](https://david-dm.org/aureooms/js-knapsack)
-[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-knapsack.svg)](https://david-dm.org/aureooms/js-knapsack?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-knapsack.svg)](https://github.com/aureooms/js-knapsack/issues)
-[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-knapsack.svg)](https://www.npmjs.org/package/@aureooms/js-knapsack)
+[![License](https://img.shields.io/github/license/computational-problem-solving/knapsack.svg)](https://raw.githubusercontent.com/computational-problem-solving/knapsack/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/@problem-solving/knapsack.svg)](https://www.npmjs.org/package/@problem-solving/knapsack)
+[![Build](https://img.shields.io/travis/computational-problem-solving/knapsack/main.svg)](https://travis-ci.org/computational-problem-solving/knapsack/branches)
+[![Dependencies](https://img.shields.io/david/computational-problem-solving/knapsack.svg)](https://david-dm.org/computational-problem-solving/knapsack)
+[![Dev dependencies](https://img.shields.io/david/dev/computational-problem-solving/knapsack.svg)](https://david-dm.org/computational-problem-solving/knapsack?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/computational-problem-solving/knapsack.svg)](https://github.com/computational-problem-solving/knapsack/issues)
+[![Downloads](https://img.shields.io/npm/dm/@problem-solving/knapsack.svg)](https://www.npmjs.org/package/@problem-solving/knapsack)
 
-[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-knapsack/main.svg)](https://codecov.io/gh/aureooms/js-knapsack)
-[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-knapsack.svg)](https://codeclimate.com/github/aureooms/js-knapsack/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-knapsack/badge.svg)](https://aureooms.github.io/js-knapsack/source.html)
-[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-knapsack)](https://bundlephobia.com/result?p=@aureooms/js-knapsack)
+[![Code issues](https://img.shields.io/codeclimate/issues/computational-problem-solving/knapsack.svg)](https://codeclimate.com/github/computational-problem-solving/knapsack/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/computational-problem-solving/knapsack.svg)](https://codeclimate.com/github/computational-problem-solving/knapsack/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/computational-problem-solving/knapsack/main.svg)](https://codecov.io/gh/computational-problem-solving/knapsack)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/computational-problem-solving/knapsack.svg)](https://codeclimate.com/github/computational-problem-solving/knapsack/trends/technical_debt)
+[![Documentation](https://computational-problem-solving.github.io/knapsack/badge.svg)](https://computational-problem-solving.github.io/knapsack/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@problem-solving/knapsack)](https://bundlephobia.com/result?p=@problem-solving/knapsack)
 
 ## :book: References
 

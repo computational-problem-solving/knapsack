@@ -1,6 +1,8 @@
 import assert from 'assert';
-import {increasing} from '@aureooms/js-compare';
-import {max, map, range} from '@aureooms/js-itertools';
+import {increasing} from '@total-order/primitive';
+import {max} from '@iterable-iterator/reduce';
+import {map} from '@iterable-iterator/map';
+import {range} from '@iterable-iterator/range';
 
 /**
  * Exact DP solution to the unbounded knapsack problem with integer values

@@ -1,5 +1,6 @@
 import assert from 'assert';
-import {sum} from '@aureooms/js-itertools';
+
+import {sum} from '@iterable-iterator/reduce';
 
 /**
  * Exact DP solution to the 0-1 knapsack problem with integer values given a known

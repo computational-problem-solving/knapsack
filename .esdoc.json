@@ -13,7 +13,7 @@
           "autoPrivate": true
         },
         "brand": {
-          "title": "@aureooms/js-knapsack"
+          "title": "@problem-solving/knapsack"
         },
         "test": {
           "type": "ava",

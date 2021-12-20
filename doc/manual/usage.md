@@ -12,7 +12,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then, import the library where needed
 ```js
-const knapsack = require( '@aureooms/js-knapsack' ) ;
+const knapsack = require( '@problem-solving/knapsack' ) ;
 // or
-import * as knapsack from '@aureooms/js-knapsack' ;
+import * as knapsack from '@problem-solving/knapsack' ;
 ```

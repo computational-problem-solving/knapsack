@@ -1,4 +1,5 @@
 import assert from 'assert';
+
 import {map} from '@iterable-iterator/map';
 import {range} from '@iterable-iterator/range';
 import {sorted} from '@iterable-iterator/sorted';

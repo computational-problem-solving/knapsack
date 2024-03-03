@@ -1,9 +1,10 @@
 import assert from 'assert';
-import {increasing} from '@total-order/primitive';
-import {max} from '@iterable-iterator/reduce';
-import {map} from '@iterable-iterator/map';
+
 import {filter} from '@iterable-iterator/filter';
+import {map} from '@iterable-iterator/map';
 import {range} from '@iterable-iterator/range';
+import {max} from '@iterable-iterator/reduce';
+import {increasing} from '@total-order/primitive';
 
 import integerValuesKnapsack from './integerValuesKnapsack.js';
 

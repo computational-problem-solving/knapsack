@@ -1,8 +1,9 @@
 import assert from 'assert';
+
+import {filter} from '@iterable-iterator/filter';
 import {map} from '@iterable-iterator/map';
 import {range} from '@iterable-iterator/range';
 import {sorted} from '@iterable-iterator/sorted';
-import {filter} from '@iterable-iterator/filter';
 
 import Item from './Item.js';
 import orderedByDecreasingUtility from './orderedByDecreasingUtility.js';

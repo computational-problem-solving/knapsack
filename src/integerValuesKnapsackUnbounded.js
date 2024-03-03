@@ -1,8 +1,9 @@
 import assert from 'assert';
-import {increasing} from '@total-order/primitive';
-import {max} from '@iterable-iterator/reduce';
+
 import {map} from '@iterable-iterator/map';
 import {range} from '@iterable-iterator/range';
+import {max} from '@iterable-iterator/reduce';
+import {increasing} from '@total-order/primitive';
 
 /**
  * Exact DP solution to the unbounded knapsack problem with integer values

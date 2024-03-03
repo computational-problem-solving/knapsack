@@ -1,7 +1,7 @@
 import test from 'ava';
 
-import {all} from '@iterable-iterator/reduce';
 import {map} from '@iterable-iterator/map';
+import {all} from '@iterable-iterator/reduce';
 
 import {
 	integerValuesKnapsackUnbounded,
@@ -24,12 +24,12 @@ macro.title = (title, solve, name, v, w, n, W, opt, approx) =>
 	title
 		? `${title} (${name || solve.name})`
 		: approx === undefined
-		? `${name || solve.name}(${JSON.stringify(v)}, ${JSON.stringify(
-				w,
-		  )}, ${n}, ${W}) = ${opt}`
-		: `${name || solve.name}(${JSON.stringify(v)}, ${JSON.stringify(
-				w,
-		  )}, ${n}, ${W}) >= ${approx} * ${opt}`;
+			? `${name || solve.name}(${JSON.stringify(v)}, ${JSON.stringify(
+					w,
+				)}, ${n}, ${W}) = ${opt}`
+			: `${name || solve.name}(${JSON.stringify(v)}, ${JSON.stringify(
+					w,
+				)}, ${n}, ${W}) >= ${approx} * ${opt}`;
 
 const solvers = [
 	{

@@ -222,7 +222,8 @@
     ],
     "rules": {
       "unicorn/prefer-node-protocol": "off",
-      "unicorn/filename-case": "off"
+      "unicorn/filename-case": "off",
+      "unicorn/prevent-abbreviations": "off"
     },
     "overrides": [
       {

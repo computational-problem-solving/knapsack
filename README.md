@@ -23,7 +23,7 @@ knapsackApprox(eps, n, v, w, W); // 1-eps approximation
 
 [![License](https://img.shields.io/github/license/computational-problem-solving/knapsack.svg)](https://raw.githubusercontent.com/computational-problem-solving/knapsack/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@problem-solving/knapsack.svg)](https://www.npmjs.org/package/@problem-solving/knapsack)
-[![Tests](https://img.shields.io/github/workflow/status/computational-problem-solving/knapsack/ci?event=push&label=tests)](https://github.com/computational-problem-solving/knapsack/actions/workflows/ci.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/actions/workflow/status/computational-problem-solving/knapsack/ci.yml?branch=main&event=push&label=tests)](https://github.com/computational-problem-solving/knapsack/actions/workflows/ci.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/computational-problem-solving/knapsack.svg)](https://github.com/computational-problem-solving/knapsack/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/computational-problem-solving/knapsack.svg)](https://github.com/computational-problem-solving/knapsack/issues)
 [![Downloads](https://img.shields.io/npm/dm/@problem-solving/knapsack.svg)](https://www.npmjs.org/package/@problem-solving/knapsack)
